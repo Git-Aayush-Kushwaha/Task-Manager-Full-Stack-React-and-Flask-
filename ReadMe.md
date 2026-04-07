@@ -20,4 +20,9 @@ npm start
 \`\`\`
 
 The app will run automatically on `http://localhost:3000`.
+
 <img width="1919" height="1079" alt="Screenshot 2026-04-07 202154" src="https://github.com/user-attachments/assets/402407a3-fbe1-4b99-af1c-1b4fe17c3aaf" />
+
+Flask output that is optional will render on 'http://127.0.0.1:5000/'.
+
+<img width="1919" height="1079" alt="Screenshot 2026-04-07 202438" src="https://github.com/user-attachments/assets/6f6ebf2f-c04a-4917-a509-f78e53d64d09" />
