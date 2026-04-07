@@ -1,0 +1,188 @@
+/* Import a modern, clean font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* --- Global & Background --- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  /* An animated, dark mesh gradient background */
+  background: linear-gradient(45deg, #120e1f, #050914, #0a192f, #112240);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- The Glassmorphism Card --- */
+.task-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.title {
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  /* Text gradient for the title */
+  background: -webkit-linear-gradient(#ffffff, #a2b2ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Input & Form Area --- */
+.task-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.task-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.task-input:focus {
+  border-color: #64ffda;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 12px rgba(100, 255, 218, 0.2);
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #64ffda 0%, #00b4d8 100%);
+  color: #0a192f;
+  border: none;
+  border-radius: 12px;
+  padding: 0 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+  font-family: inherit;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 255, 218, 0.5);
+}
+
+.add-btn:active {
+  transform: translateY(1px);
+}
+
+/* --- Task List Area --- */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px; /* Room for the custom scrollbar */
+}
+
+/* Custom Webkit Scrollbar */
+.task-list::-webkit-scrollbar {
+  width: 6px;
+}
+.task-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.task-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.task-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Individual Task Items --- */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.task-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #e2e8f0;
+  word-break: break-word;
+  padding-right: 15px;
+}
+
+/* --- Delete Button --- */
+.delete-btn {
+  background: rgba(255, 75, 75, 0.1);
+  color: #ff4b4b;
+  border: 1px solid rgba(255, 75, 75, 0.3);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.delete-btn:hover {
+  background: #ff4b4b;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 75, 75, 0.4);
+}
+
+.empty-state {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+  margin-top: 20px;
+  font-size: 15px;
+}
